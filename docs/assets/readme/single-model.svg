@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Single-model runtime: trunk and MTP heads share hidden states">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e14"/>
+      <stop offset="100%" stop-color="#06060a"/>
+    </linearGradient>
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="cardBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.20)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="outerBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cdcdc6"/>
+      <stop offset="100%" stop-color="#7e7e76"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <text x="60" y="56" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#80807a" letter-spacing="6">SINGLE-MODEL RUNTIME  ·  TARGET AND DRAFTER ARE THE SAME CHECKPOINT</text>
+
+  <!-- Outer "Target model" container -->
+  <g transform="translate(60, 92)">
+    <rect x="0" y="0" width="1080" height="232" rx="18" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="36" rx="18" fill="url(#outerBevel)"/>
+    <text x="22" y="42" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">TARGET MODEL  ·  QWEN3.6-27B  ·  SINGLE CHECKPOINT</text>
+
+    <!-- Trunk sub-card -->
+    <g transform="translate(38, 76)">
+      <rect x="0" y="0" width="450" height="130" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+      <rect x="0" y="0" width="450" height="28" rx="12" fill="url(#cardBevel)"/>
+      <text x="20" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="3">TRUNK</text>
+      <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">64 layers</text>
+      <text x="20" y="100" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">48 GDN  ·  16 full-attention</text>
+      <text x="20" y="118" font-family="ui-monospace, monospace" font-size="12" fill="#9a9a92">committed-history KV cache</text>
+    </g>
+
+    <!-- MTP head sub-card -->
+    <g transform="translate(594, 76)">
+      <rect x="0" y="0" width="450" height="130" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+      <rect x="0" y="0" width="450" height="28" rx="12" fill="url(#cardBevel)"/>
+      <text x="20" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="3">MTP HEADS</text>
+      <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">Built-in drafter</text>
+      <text x="20" y="100" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">Recursive depth K = 3 default</text>
+      <text x="20" y="118" font-family="ui-monospace, monospace" font-size="12" fill="#9a9a92">no second model · zero RAM tax</text>
+    </g>
+
+    <!-- shares hidden states arrow between sub-cards -->
+    <g transform="translate(488, 141)">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#80807a" stroke-width="1.4" stroke-dasharray="4 4"/>
+      <path d="M 92 -5 L 100 0 L 92 5" fill="none" stroke="#cdcdc6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="538" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#a0a098" letter-spacing="2">SHARES HIDDEN STATES</text>
+  </g>
+</svg>

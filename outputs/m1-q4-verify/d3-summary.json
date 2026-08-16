@@ -1,0 +1,86 @@
+{
+  "depths": {
+    "3": {
+      "acceptance_by_position": {
+        "shipped": [
+          0.9024390243902439,
+          0.675,
+          0.5
+        ],
+        "stock": [
+          0.9024390243902439,
+          0.675,
+          0.5
+        ]
+      },
+      "lane_signatures": {
+        "shipped": [
+          "('m1q4', True, True, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "stock": [
+          "('m1q4', 'off')"
+        ]
+      },
+      "lane_stats": {
+        "shipped": [
+          {
+            "gdn_fused": 96,
+            "gdn_stock": 144,
+            "mlp_fused": 112,
+            "mlp_stock": 929,
+            "qlinear_fused": 112
+          },
+          {
+            "gdn_fused": 96,
+            "gdn_stock": 144,
+            "mlp_fused": 112,
+            "mlp_stock": 929,
+            "qlinear_fused": 112
+          }
+        ],
+        "stock": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ]
+      },
+      "medians": {
+        "shipped": {
+          "active_memory_bytes": 20372752446.0,
+          "draft_ms_per_call": 48.6571993098464,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 20982631861.0,
+          "tok_s": 11.230283621063885,
+          "verify_eval_ms_per_call": 24.927166275682836,
+          "verify_forward_ms_per_call": 196.7004038209173,
+          "verify_ms_per_call": 221.62757009660015
+        },
+        "stock": {
+          "active_memory_bytes": 20372752446.0,
+          "draft_ms_per_call": 47.94790289261506,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 20982467928.0,
+          "tok_s": 11.300243125161245,
+          "verify_eval_ms_per_call": 24.33490185787724,
+          "verify_forward_ms_per_call": 196.22530903576435,
+          "verify_ms_per_call": 220.7436824411118
+        }
+      },
+      "tokens_identical_to_stock": {
+        "shipped": true,
+        "stock": true
+      }
+    }
+  }
+}

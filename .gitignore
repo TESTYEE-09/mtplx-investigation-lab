@@ -1,0 +1,71 @@
+# macOS and editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.build/
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Model weights and generated artifacts
+/models/
+# Lab copies of models live under /models/ and are disposable: the installed
+# tree at ~/.mtplx/models/ is the source for testing and is never written to.
+
+# GPU traces and profiler captures -- these reach multiple GB
+*.gputrace/
+*.gputrace
+*.trace
+*.instruments
+*.trace.zip
+Instruments*/
+
+# Benchmark output is disposable, except the curated evidence in outputs/KEEP/.
+# `outputs/*` rather than `outputs/` so the negation below can re-include it:
+# git cannot re-include a path whose parent directory is excluded.
+outputs/*
+!outputs/KEEP/
+# The curated evidence directories are re-included by name, so a clone is
+# self-contained while any *new* run directory stays ignored by default.
+!outputs/m1-q4-verify/
+!outputs/m1-q4-gdn-proj/
+!outputs/m1-q4-m23/
+!outputs/m1-gdn/
+!outputs/tune-compare/
+qa_runs/
+runs/
+artifacts/
+benchmark_outputs/
+*.safetensors
+*.gguf
+*.bin
+*.mlx
+*.npz
+!apps/MTPLXApp/Sources/MTPLXAppCore/Resources/
+!apps/MTPLXApp/Sources/MTPLXAppCore/Resources/StepAdapters/
+!apps/MTPLXApp/Sources/MTPLXAppCore/Resources/StepAdapters/*.npz
+*.npy
+*.jsonl
+!mtplx/benchmarks/prompts/*.jsonl
+
+# Local secrets
+.env
+.env.*
+*.local
+.webui_secret_key
+.hf-home/
+.claude/
+
+# Engagement-counter evidence. Kept last: the global `*.jsonl` rule above would
+# otherwise re-exclude it, since the last matching pattern wins.
+!outputs/tune-compare/**/lane-stats.jsonl

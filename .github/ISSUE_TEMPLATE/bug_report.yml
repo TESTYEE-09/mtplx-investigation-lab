@@ -1,0 +1,28 @@
+name: Bug report
+description: Report an MTPLX failure
+body:
+  - type: textarea
+    id: doctor
+    attributes:
+      label: mtplx doctor --json
+      description: Paste the output.
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Exact command
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model path or repo id
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Chip, RAM, macOS version
+    validations:
+      required: true

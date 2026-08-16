@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MTPLX serving stack: clients, API, engine, runtime">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e14"/>
+      <stop offset="100%" stop-color="#06060a"/>
+    </linearGradient>
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="cardOwn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <linearGradient id="cardBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.20)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cdcdc6"/>
+      <stop offset="100%" stop-color="#7e7e76"/>
+    </linearGradient>
+    <radialGradient id="chip" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#f8f8f2"/>
+      <stop offset="60%" stop-color="#9e9e96"/>
+      <stop offset="100%" stop-color="#3a3a36"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <text x="60" y="56" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#80807a" letter-spacing="6">SERVING STACK  ·  POINT YOUR EDITOR AT LOCALHOST</text>
+
+  <!-- Clients row: 4 mini-cards -->
+  <g transform="translate(60, 100)">
+    <rect x="0" y="0" width="1080" height="130" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">CLIENTS</text>
+
+    <g transform="translate(22, 60)">
+      <rect x="0" y="0" width="246" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">BROWSER CHAT</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="13" fill="url(#chrome)">127.0.0.1:8000</text>
+    </g>
+    <g transform="translate(280, 60)">
+      <rect x="0" y="0" width="246" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">EDITORS / IDE</text>
+      <text x="16" y="44" font-family="Inter, sans-serif" font-size="13" fill="url(#chrome)" font-weight="600">Open WebUI · Cline · Continue</text>
+    </g>
+    <g transform="translate(538, 60)">
+      <rect x="0" y="0" width="246" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">SDK / CURL</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="12.5" fill="url(#chrome)">openai-python · anthropic-python</text>
+    </g>
+    <g transform="translate(796, 60)">
+      <rect x="0" y="0" width="262" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">TERMINAL</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="13" fill="url(#chrome)">mtplx start cli</text>
+    </g>
+  </g>
+
+  <g transform="translate(591, 240)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- API row -->
+  <g transform="translate(60, 272)">
+    <rect x="0" y="0" width="1080" height="130" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">FASTAPI SERVER</text>
+
+    <g transform="translate(22, 60)">
+      <rect x="0" y="0" width="334" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">OPENAI-COMPAT</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="12" fill="url(#chrome)">/v1/chat/completions  ·  /v1/models</text>
+    </g>
+    <g transform="translate(368, 60)">
+      <rect x="0" y="0" width="334" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">ANTHROPIC-COMPAT</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="12" fill="url(#chrome)">/v1/messages  ·  streaming SSE</text>
+    </g>
+    <g transform="translate(714, 60)">
+      <rect x="0" y="0" width="344" height="56" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="2.5">OBSERVABILITY</text>
+      <text x="16" y="44" font-family="ui-monospace, monospace" font-size="12" fill="url(#chrome)">/health  ·  /metrics</text>
+    </g>
+  </g>
+
+  <g transform="translate(591, 412)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Engine row -->
+  <g transform="translate(60, 444)">
+    <rect x="0" y="0" width="1080" height="130" rx="14" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">ENGINE LAYER</text>
+
+    <g transform="translate(22, 60)">
+      <rect x="0" y="0" width="514" height="56" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#cdcdc6" letter-spacing="2.5">ENGINE SESSIONS</text>
+      <text x="16" y="44" font-family="Inter, sans-serif" font-size="13" fill="#e6e6e0">Per-chat context  ·  KV cache state retention</text>
+    </g>
+    <g transform="translate(548, 60)">
+      <rect x="0" y="0" width="510" height="56" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+      <text x="16" y="22" font-family="ui-monospace, monospace" font-size="10" fill="#cdcdc6" letter-spacing="2.5">SESSION BANK</text>
+      <text x="16" y="44" font-family="Inter, sans-serif" font-size="13" fill="#e6e6e0">Warm-prefix exact-state reuse  ·  <tspan font-family="ui-monospace, monospace" fill="#cdcdc6">max_abs_diff = 0.0</tspan></text>
+    </g>
+  </g>
+
+  <g transform="translate(591, 584)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Runtime -->
+  <g transform="translate(60, 616)">
+    <rect x="0" y="0" width="1080" height="76" rx="14" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="22" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="42" font-family="ui-monospace, monospace" font-size="11" fill="#dcdcd4" letter-spacing="3">NATIVE-MTP RUNTIME</text>
+    <text x="240" y="44" font-family="Inter, sans-serif" font-size="14" fill="#e6e6e0">The speculative cycle hot loop · runs on stock PyPI MLX + custom in-package Metal kernels</text>
+  </g>
+</svg>

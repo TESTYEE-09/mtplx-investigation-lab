@@ -1,0 +1,136 @@
+{
+  "depths": {
+    "1": {
+      "acceptance_by_position": {
+        "both": [
+          0.84375
+        ],
+        "gdn": [
+          0.84375
+        ],
+        "mlp": [
+          0.84375
+        ],
+        "stock": [
+          0.84375
+        ]
+      },
+      "medians": {
+        "both": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 16.001474711326104,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934439876.0,
+          "tok_s": 8.767704236973103,
+          "verify_eval_ms_per_call": 25.145642105957393,
+          "verify_forward_ms_per_call": 180.25294756036158,
+          "verify_ms_per_call": 205.3585410910521
+        },
+        "gdn": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 15.672782274178285,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934423492.0,
+          "tok_s": 8.134691165851859,
+          "verify_eval_ms_per_call": 23.68086046926416,
+          "verify_forward_ms_per_call": 199.14022162133318,
+          "verify_ms_per_call": 222.9227486377843
+        },
+        "mlp": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 15.607108015639383,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934439829.0,
+          "tok_s": 8.796277729398568,
+          "verify_eval_ms_per_call": 24.921555515902583,
+          "verify_forward_ms_per_call": 179.94639012084173,
+          "verify_ms_per_call": 205.12097724272417
+        },
+        "stock": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 16.293052348015465,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934415253.0,
+          "tok_s": 7.970880541348784,
+          "verify_eval_ms_per_call": 24.296530303024955,
+          "verify_forward_ms_per_call": 202.84862880229906,
+          "verify_ms_per_call": 227.12413634783871
+        }
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    },
+    "2": {
+      "acceptance_by_position": {
+        "both": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "gdn": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "mlp": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "stock": [
+          0.9545454545454546,
+          0.8571428571428571
+        ]
+      },
+      "medians": {
+        "both": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 29.77427630622001,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.78634205864295,
+          "verify_eval_ms_per_call": 34.43885871725481,
+          "verify_forward_ms_per_call": 253.21963224015906,
+          "verify_ms_per_call": 287.4472818277908
+        },
+        "gdn": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 29.545259088753603,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.106313948111374,
+          "verify_eval_ms_per_call": 32.65719284631221,
+          "verify_forward_ms_per_call": 281.87053723914966,
+          "verify_ms_per_call": 314.46055171798673
+        },
+        "mlp": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 29.41713343676858,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.759654731439198,
+          "verify_eval_ms_per_call": 34.16362128178741,
+          "verify_forward_ms_per_call": 254.50837234877878,
+          "verify_ms_per_call": 288.67199363056625
+        },
+        "stock": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 29.954886649806134,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.015983964366992,
+          "verify_eval_ms_per_call": 33.046553475129336,
+          "verify_forward_ms_per_call": 284.50701804198934,
+          "verify_ms_per_call": 317.55357151711866
+        }
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    }
+  }
+}

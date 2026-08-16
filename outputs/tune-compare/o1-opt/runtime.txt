@@ -1,0 +1,5 @@
+--- runtime proof ---
+binary: /Users/eamon/Documents/mtplx-investigation-lab/repo/.venv/bin/mtplx
+mtplx package : /Users/eamon/Documents/mtplx-investigation-lab/repo/mtplx/__init__.py
+version       : 2.7.1
+m1_q4_verify  : True

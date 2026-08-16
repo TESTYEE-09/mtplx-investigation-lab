@@ -1,0 +1,162 @@
+{
+  "depths": {
+    "1": {
+      "acceptance_by_position": {
+        "shipped": [
+          0.9090909090909091
+        ],
+        "stock": [
+          0.9090909090909091
+        ]
+      },
+      "lane_signatures": {
+        "shipped": [
+          "('m1q4', True, True, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "stock": [
+          "('m1q4', 'off')"
+        ]
+      },
+      "lane_stats": {
+        "shipped": [
+          {
+            "gdn_fused": 240,
+            "gdn_stock": 240,
+            "mlp_fused": 280,
+            "mlp_stock": 2725,
+            "qlinear_fused": 280
+          },
+          {
+            "gdn_fused": 240,
+            "gdn_stock": 240,
+            "mlp_fused": 280,
+            "mlp_stock": 2725,
+            "qlinear_fused": 280
+          }
+        ],
+        "stock": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ]
+      },
+      "medians": {
+        "shipped": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 16.48773956603965,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 20967864522.0,
+          "tok_s": 9.50268822858313,
+          "verify_eval_ms_per_call": 26.332646745901165,
+          "verify_forward_ms_per_call": 159.8671106205906,
+          "verify_ms_per_call": 186.19975736649178
+        },
+        "stock": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 16.605528278978912,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 20967785610.0,
+          "tok_s": 8.492201980027634,
+          "verify_eval_ms_per_call": 25.592650718401693,
+          "verify_forward_ms_per_call": 184.75333031890833,
+          "verify_ms_per_call": 210.27440755542054
+        }
+      },
+      "tokens_identical_to_stock": {
+        "shipped": true,
+        "stock": true
+      }
+    },
+    "2": {
+      "acceptance_by_position": {
+        "shipped": [
+          0.9343065693430657,
+          0.8467153284671532
+        ],
+        "stock": [
+          0.9343065693430657,
+          0.8467153284671532
+        ]
+      },
+      "lane_signatures": {
+        "shipped": [
+          "('m1q4', True, True, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "stock": [
+          "('m1q4', 'off')"
+        ]
+      },
+      "lane_stats": {
+        "shipped": [
+          {
+            "gdn_fused": 240,
+            "gdn_stock": 240,
+            "mlp_fused": 280,
+            "mlp_stock": 2725,
+            "qlinear_fused": 280
+          },
+          {
+            "gdn_fused": 240,
+            "gdn_stock": 240,
+            "mlp_fused": 280,
+            "mlp_stock": 2725,
+            "qlinear_fused": 280
+          }
+        ],
+        "stock": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ]
+      },
+      "medians": {
+        "shipped": {
+          "active_memory_bytes": 20372752426.0,
+          "draft_ms_per_call": 32.82667605410519,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 21010828928.0,
+          "tok_s": 9.243376159304622,
+          "verify_eval_ms_per_call": 34.64522142340961,
+          "verify_forward_ms_per_call": 233.03748252125672,
+          "verify_ms_per_call": 267.6560280677855
+        },
+        "stock": {
+          "active_memory_bytes": 20372752426.0,
+          "draft_ms_per_call": 32.804366492253365,
+          "n_samples": 4.0,
+          "peak_memory_bytes": 21010828930.0,
+          "tok_s": 8.281296073469997,
+          "verify_eval_ms_per_call": 35.94093909476583,
+          "verify_forward_ms_per_call": 266.14694174655807,
+          "verify_ms_per_call": 302.3204093334915
+        }
+      },
+      "tokens_identical_to_stock": {
+        "shipped": true,
+        "stock": true
+      }
+    }
+  }
+}

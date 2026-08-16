@@ -1,0 +1,6 @@
+build/
+*.egg-info/
+mtplx_native_mlp/*.so
+mtplx_native_mlp/*.dylib
+mtplx_native_mlp/*.metallib
+mtplx_native_mlp/__pycache__/

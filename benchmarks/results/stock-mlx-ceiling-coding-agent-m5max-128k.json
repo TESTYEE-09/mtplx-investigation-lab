@@ -1,0 +1,26 @@
+{
+  "kind": "stock_mlx_prefill_ceiling_probe",
+  "context_tokens": 131072,
+  "prompt_actual_tokens": 131072,
+  "chunk": 2048,
+  "chunks": 64,
+  "elapsed_s": 363.2835529170043,
+  "pp_tps": 360.79805691050564,
+  "prompt_metadata": {
+    "prompt_policy": "coding_agent_tail_v2",
+    "prompt_style": "coding-agent",
+    "prompt_format": "chat",
+    "prompt_enable_thinking": false,
+    "prompt_release_valid": true,
+    "prompt_tail_sha256": "887573dd262ed624eccb39f8b833f5711dd36889d2ea16e68837e2985a1f71b1",
+    "prompt_tail_tokens": 321,
+    "prompt_tail_preserved": true,
+    "prompt_tail_truncated": false,
+    "prompt_filler_tokens": 130751,
+    "prompt_head_trimmed_tokens": 1,
+    "prompt_context_tokens": 131072,
+    "prompt_actual_tokens": 131072,
+    "prompt_filler_sha256": "1847eeaa0198d7824231187fe78ee81498e1ef7b094c6e9c44d6aa05eb5cfa43"
+  },
+  "peak_memory_gb": 37.052313866093755
+}

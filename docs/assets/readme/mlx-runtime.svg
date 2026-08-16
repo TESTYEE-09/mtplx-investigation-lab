@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MLX runtime layer: source fork, custom Metal kernels, compiled graphs, numerical hygiene">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e14"/>
+      <stop offset="100%" stop-color="#06060a"/>
+    </linearGradient>
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="cardOwn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <linearGradient id="cardBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.20)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cdcdc6"/>
+      <stop offset="100%" stop-color="#7e7e76"/>
+    </linearGradient>
+    <radialGradient id="chip" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#f8f8f2"/>
+      <stop offset="60%" stop-color="#9e9e96"/>
+      <stop offset="100%" stop-color="#3a3a36"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="920" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <text x="60" y="56" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#80807a" letter-spacing="6">MLX RUNTIME LAYER  ·  WHAT MTPLX OWNS</text>
+  <text x="60" y="100" font-family="Inter, sans-serif" font-weight="700" font-size="32" fill="url(#chrome)" letter-spacing="-1">Stock PyPI MLX plus custom in-package kernels.</text>
+
+  <!-- Layer 1: Stock MLX runtime -->
+  <g transform="translate(60, 152)">
+    <rect x="0" y="0" width="1080" height="120" rx="14" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">01 — STOCK MLX RUNTIME</text>
+    <text x="22" y="76" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">mlx (PyPI) — no fork, no patched build</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="14" fill="#a0a098">Verify-shape speed comes from MTPLX kernels below (<tspan font-family="ui-monospace, monospace" fill="#cdcdc6">NAX vk_k / vk-q8</tspan> · packed-GQA SDPA · compiled verify), shipped inside the package</text>
+  </g>
+  <g transform="translate(591, 282)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Layer 2: Custom Metal kernels -->
+  <g transform="translate(60, 314)">
+    <rect x="0" y="0" width="1080" height="180" rx="14" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">02 — CUSTOM METAL KERNELS</text>
+
+    <!-- 3 kernel sub-cards -->
+    <g transform="translate(22, 62)">
+      <rect x="0" y="0" width="335" height="100" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="14" y="26" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">KERNEL</text>
+      <text x="14" y="52" font-family="ui-monospace, monospace" font-size="14" fill="url(#chrome)" letter-spacing="-0.3">linear-gdn-from-conv-tape</text>
+      <text x="14" y="76" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Fused GDN verify with</text>
+      <text x="14" y="92" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">innovation-tape rollback.</text>
+    </g>
+    <g transform="translate(372, 62)">
+      <rect x="0" y="0" width="335" height="100" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="14" y="26" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">KERNEL</text>
+      <text x="14" y="52" font-family="ui-monospace, monospace" font-size="14" fill="url(#chrome)" letter-spacing="-0.3">verify_qmv (small-M)</text>
+      <text x="14" y="76" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Successor to dflash-mlx's</text>
+      <text x="14" y="92" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">M=16 idea, retuned M=3..6.</text>
+    </g>
+    <g transform="translate(722, 62)">
+      <rect x="0" y="0" width="335" height="100" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="14" y="26" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">KERNEL</text>
+      <text x="14" y="52" font-family="ui-monospace, monospace" font-size="14" fill="url(#chrome)" letter-spacing="-0.3">draft-only LM head</text>
+      <text x="14" y="76" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">4/3-bit head built in memory.</text>
+      <text x="14" y="92" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Target lm_head untouched.</text>
+    </g>
+  </g>
+  <g transform="translate(591, 504)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Layer 3: Compiled graphs (GraphBank) -->
+  <g transform="translate(60, 536)">
+    <rect x="0" y="0" width="1080" height="120" rx="14" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">03 — COMPILED GRAPHS</text>
+    <text x="22" y="76" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">GraphBank</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="14" fill="#a0a098"><tspan font-family="ui-monospace, monospace" fill="#cdcdc6">mx.compile</tspan> per (suffix_len, depth, profile) · capture_commit ≈ 0.073 ms / cycle vs verify ≈ 47 ms / cycle</text>
+  </g>
+  <g transform="translate(591, 666)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 4 5 L 9 12 L 14 5" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- Layer 4: Numerical hygiene -->
+  <g transform="translate(60, 698)">
+    <rect x="0" y="0" width="1080" height="120" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="1080" height="32" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="38" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">04 — NUMERICAL HYGIENE</text>
+    <text x="22" y="76" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">Correctness fixes, not speed</text>
+    <text x="22" y="104" font-family="Inter, sans-serif" font-size="14" fill="#a0a098"><tspan font-family="ui-monospace, monospace" fill="#cdcdc6">fp32</tspan> p/q ratio (BF16 underflows at small q)  ·  <tspan font-family="ui-monospace, monospace" fill="#cdcdc6">mx.random.split</tspan> per draft position</text>
+  </g>
+
+  <!-- footer -->
+  <text x="600" y="888" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#56564f" letter-spacing="4">EVERYTHING ABOVE FEEDS THE SPECULATIVE CYCLE HOT LOOP</text>
+</svg>

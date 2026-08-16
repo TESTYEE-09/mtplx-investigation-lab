@@ -1,0 +1,645 @@
+{
+  "device": {
+    "architecture": "applegpu_g13s",
+    "device_name": "Apple M1 Pro",
+    "max_buffer_length": 20100448256,
+    "max_recommended_working_set_size": 26800603136,
+    "memory_size": 34359738368,
+    "resource_limit": 499000
+  },
+  "max_tokens": 96,
+  "model": "models/qwen38-27b-optimized-speed",
+  "results": [
+    {
+      "depth": 1,
+      "stats": {
+        "both": {
+          "accepted_by_depth": [
+            43
+          ],
+          "drafted_by_depth": [
+            48
+          ],
+          "tok_s": 8.65799050340879,
+          "verify_eval_ms_per_call": 23.53895253000534,
+          "verify_forward_ms_per_call": 187.86086742700866,
+          "verify_ms_per_call": 211.399819957014
+        },
+        "gdn": {
+          "accepted_by_depth": [
+            43
+          ],
+          "drafted_by_depth": [
+            48
+          ],
+          "tok_s": 8.554002400503643,
+          "verify_eval_ms_per_call": 23.988939654521587,
+          "verify_forward_ms_per_call": 189.59321606160637,
+          "verify_ms_per_call": 213.58215571612794
+        },
+        "mlp": {
+          "accepted_by_depth": [
+            43
+          ],
+          "drafted_by_depth": [
+            48
+          ],
+          "tok_s": 8.364533758004907,
+          "verify_eval_ms_per_call": 24.53527897679513,
+          "verify_forward_ms_per_call": 194.13848638882604,
+          "verify_ms_per_call": 218.67376536562116
+        },
+        "stock": {
+          "accepted_by_depth": [
+            43
+          ],
+          "drafted_by_depth": [
+            48
+          ],
+          "tok_s": 8.19036035607549,
+          "verify_eval_ms_per_call": 24.533973552098935,
+          "verify_forward_ms_per_call": 197.54016328584024,
+          "verify_ms_per_call": 222.07413683793916
+        }
+      },
+      "stock_tokens": [
+        271,
+        248068,
+        198,
+        760,
+        1156,
+        6587,
+        264,
+        12654,
+        709,
+        421,
+        78161,
+        1330,
+        10300,
+        7308,
+        11140,
+        13,
+        6558,
+        728,
+        1683,
+        883,
+        1092,
+        310,
+        2830,
+        25,
+        271,
+        16,
+        13,
+        3856,
+        29642,
+        25,
+        4868,
+        1220,
+        381,
+        1510,
+        1551,
+        18078,
+        60,
+        63,
+        321,
+        460,
+        913,
+        1510,
+        1551,
+        18078,
+        60,
+        63,
+        198,
+        17,
+        13,
+        357,
+        61446,
+        4479,
+        889,
+        24228,
+        1092,
+        424,
+        1503,
+        198,
+        18,
+        13,
+        8771,
+        9989,
+        303,
+        279,
+        4479,
+        889,
+        198,
+        19,
+        13,
+        561,
+        709,
+        4924,
+        1220,
+        4072,
+        264,
+        10562,
+        318,
+        4650,
+        279,
+        10562,
+        2923,
+        314,
+        10562,
+        3269,
+        8,
+        471,
+        4483,
+        1330,
+        2582,
+        1284,
+        13202,
+        11140,
+        321,
+        16876,
+        799,
+        10300
+      ],
+      "token_counts": {
+        "both": 96,
+        "gdn": 96,
+        "mlp": 96,
+        "stock": 96
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    },
+    {
+      "depth": 2,
+      "stats": {
+        "both": {
+          "accepted_by_depth": [
+            31,
+            25
+          ],
+          "drafted_by_depth": [
+            37,
+            36
+          ],
+          "tok_s": 7.442989751290146,
+          "verify_eval_ms_per_call": 33.92293213217176,
+          "verify_forward_ms_per_call": 275.4793311580311,
+          "verify_ms_per_call": 309.4022632902029
+        },
+        "gdn": {
+          "accepted_by_depth": [
+            31,
+            25
+          ],
+          "drafted_by_depth": [
+            37,
+            36
+          ],
+          "tok_s": 7.635856933296997,
+          "verify_eval_ms_per_call": 33.17940686668551,
+          "verify_forward_ms_per_call": 269.32556905261373,
+          "verify_ms_per_call": 302.5049759192993
+        },
+        "mlp": {
+          "accepted_by_depth": [
+            31,
+            25
+          ],
+          "drafted_by_depth": [
+            37,
+            36
+          ],
+          "tok_s": 7.6777606269434,
+          "verify_eval_ms_per_call": 32.842135156036086,
+          "verify_forward_ms_per_call": 267.89949563145024,
+          "verify_ms_per_call": 300.7416307874863
+        },
+        "stock": {
+          "accepted_by_depth": [
+            31,
+            25
+          ],
+          "drafted_by_depth": [
+            37,
+            36
+          ],
+          "tok_s": 7.671651785229246,
+          "verify_eval_ms_per_call": 32.84923355347832,
+          "verify_forward_ms_per_call": 268.1883749993224,
+          "verify_ms_per_call": 301.0376085528007
+        }
+      },
+      "stock_tokens": [
+        271,
+        248068,
+        198,
+        760,
+        1156,
+        6587,
+        264,
+        12654,
+        709,
+        421,
+        78161,
+        1330,
+        10300,
+        7308,
+        11140,
+        13,
+        6558,
+        728,
+        1683,
+        883,
+        1092,
+        579,
+        4221,
+        25,
+        271,
+        16,
+        13,
+        357,
+        709,
+        421,
+        78161,
+        1330,
+        10300,
+        11140,
+        1083,
+        799,
+        10300,
+        1103,
+        198,
+        17,
+        13,
+        3856,
+        29642,
+        198,
+        18,
+        13,
+        357,
+        61446,
+        4479,
+        889,
+        198,
+        19,
+        13,
+        8771,
+        9989,
+        318,
+        258,
+        279,
+        4479,
+        889,
+        8,
+        271,
+        760,
+        11088,
+        5313,
+        369,
+        279,
+        1330,
+        55755,
+        10562,
+        494,
+        10562,
+        3269,
+        13,
+        11396,
+        1879,
+        11140,
+        513,
+        2582,
+        10300,
+        11,
+        748,
+        353,
+        628,
+        4088,
+        1472,
+        1070,
+        440,
+        1330,
+        26564,
+        11,
+        2590,
+        20483,
+        279,
+        8882,
+        2315
+      ],
+      "token_counts": {
+        "both": 96,
+        "gdn": 96,
+        "mlp": 96,
+        "stock": 96
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    },
+    {
+      "depth": 3,
+      "stats": {
+        "both": {
+          "accepted_by_depth": [
+            26,
+            20,
+            17
+          ],
+          "drafted_by_depth": [
+            30,
+            29,
+            29
+          ],
+          "tok_s": 11.61816712218599,
+          "verify_eval_ms_per_call": 22.576599548037553,
+          "verify_forward_ms_per_call": 200.32744341991813,
+          "verify_ms_per_call": 222.90404296795566
+        },
+        "gdn": {
+          "accepted_by_depth": [
+            26,
+            20,
+            17
+          ],
+          "drafted_by_depth": [
+            30,
+            29,
+            29
+          ],
+          "tok_s": 11.608143067122315,
+          "verify_eval_ms_per_call": 22.550096648046747,
+          "verify_forward_ms_per_call": 201.00881722558574,
+          "verify_ms_per_call": 223.5589138736325
+        },
+        "mlp": {
+          "accepted_by_depth": [
+            26,
+            20,
+            17
+          ],
+          "drafted_by_depth": [
+            30,
+            29,
+            29
+          ],
+          "tok_s": 11.612462901840345,
+          "verify_eval_ms_per_call": 22.606567125729917,
+          "verify_forward_ms_per_call": 200.8696465167187,
+          "verify_ms_per_call": 223.4762136424486
+        },
+        "stock": {
+          "accepted_by_depth": [
+            26,
+            20,
+            17
+          ],
+          "drafted_by_depth": [
+            30,
+            29,
+            29
+          ],
+          "tok_s": 11.506276637853137,
+          "verify_eval_ms_per_call": 22.52603496890515,
+          "verify_forward_ms_per_call": 203.41457258027438,
+          "verify_ms_per_call": 225.94060754917953
+        }
+      },
+      "stock_tokens": [
+        271,
+        248068,
+        198,
+        760,
+        1156,
+        6587,
+        264,
+        12654,
+        709,
+        421,
+        78161,
+        1330,
+        10300,
+        7308,
+        11140,
+        13,
+        6558,
+        728,
+        1683,
+        883,
+        1092,
+        579,
+        4221,
+        25,
+        271,
+        16,
+        13,
+        3856,
+        29642,
+        471,
+        364,
+        4868,
+        321,
+        460,
+        913,
+        198,
+        17,
+        13,
+        60585,
+        1029,
+        4479,
+        889,
+        198,
+        18,
+        13,
+        8771,
+        9989,
+        303,
+        279,
+        4479,
+        889,
+        198,
+        19,
+        13,
+        561,
+        709,
+        1220,
+        10562,
+        1330,
+        10300,
+        11140,
+        1083,
+        799,
+        10300,
+        1103,
+        271,
+        9764,
+        728,
+        3165,
+        264,
+        4101,
+        11,
+        10727,
+        10562,
+        709,
+        1608,
+        279,
+        11088,
+        1330,
+        55755,
+        5313,
+        318,
+        62116,
+        310,
+        279,
+        10562,
+        2923,
+        303,
+        10562,
+        3269,
+        681,
+        864,
+        369,
+        496,
+        1393,
+        57838
+      ],
+      "token_counts": {
+        "both": 96,
+        "gdn": 96,
+        "mlp": 96,
+        "stock": 96
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    }
+  ],
+  "runtime_profile": "turbo",
+  "seed": 20260816,
+  "selfcheck_gdn": {
+    "checks": [
+      {
+        "array_equal": true,
+        "k": 5120,
+        "m": 2,
+        "ns": [
+          10240,
+          6144,
+          48,
+          48
+        ],
+        "nsg": 2,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "m": 3,
+        "ns": [
+          10240,
+          6144,
+          48,
+          48
+        ],
+        "nsg": 2,
+        "passed": true
+      }
+    ],
+    "enabled": true,
+    "failed": 0,
+    "gdn_layers": 48,
+    "nsg": 2,
+    "passed": 2,
+    "ready": true
+  },
+  "selfcheck_keys": {
+    "('dual', 2, 5120, 17408, 32, 'mlx.core.bfloat16')": true,
+    "('dual', 3, 5120, 17408, 32, 'mlx.core.bfloat16')": true,
+    "('gdn_family', 2, 5120, (10240, 6144, 48, 48), 32, 2, 'mlx.core.bfloat16')": true,
+    "('gdn_family', 3, 5120, (10240, 6144, 48, 48), 32, 2, 'mlx.core.bfloat16')": true,
+    "('mlp', 2, 5120, 17408, 32, 'mlx.core.bfloat16')": true,
+    "('mlp', 3, 5120, 17408, 32, 'mlx.core.bfloat16')": true,
+    "(2, 17408, 5120, 32, 'mlx.core.bfloat16')": true,
+    "(2, 5120, 17408, 32, 'mlx.core.bfloat16')": true,
+    "(3, 17408, 5120, 32, 'mlx.core.bfloat16')": true,
+    "(3, 5120, 17408, 32, 'mlx.core.bfloat16')": true
+  },
+  "selfcheck_mlp": {
+    "checks": [
+      {
+        "array_equal": true,
+        "k": 5120,
+        "m": 2,
+        "n": 17408,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "m": 3,
+        "n": 17408,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 17408,
+        "m": 2,
+        "n": 5120,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 17408,
+        "m": 3,
+        "n": 5120,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "kind": "dual",
+        "m": 2,
+        "n": 17408,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "kind": "mlp",
+        "m": 2,
+        "n": 17408,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "kind": "dual",
+        "m": 3,
+        "n": 17408,
+        "passed": true
+      },
+      {
+        "array_equal": true,
+        "k": 5120,
+        "kind": "mlp",
+        "m": 3,
+        "n": 17408,
+        "passed": true
+      }
+    ],
+    "enabled": true,
+    "failed": 0,
+    "passed": 8,
+    "ready": true
+  }
+}

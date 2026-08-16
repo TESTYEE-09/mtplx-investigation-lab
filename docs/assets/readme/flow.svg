@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" preserveAspectRatio="xMidYMid meet" role="img" aria-label="MTPLX high-level flow: prompt to verified tokens to API server to chat clients">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e14"/>
+      <stop offset="100%" stop-color="#06060a"/>
+    </linearGradient>
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="cardOwn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.10)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <linearGradient id="cardBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.20)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cdcdc6"/>
+      <stop offset="100%" stop-color="#7e7e76"/>
+    </linearGradient>
+    <radialGradient id="chip" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#f8f8f2"/>
+      <stop offset="60%" stop-color="#9e9e96"/>
+      <stop offset="100%" stop-color="#3a3a36"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="480" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1600" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <text x="60" y="56" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#80807a" letter-spacing="6">END-TO-END FLOW  ·  PROMPT TO VERIFIED TOKEN</text>
+
+  <!-- Row 1: 5 cards across, y = 110..230 (height 120) -->
+  <!-- card width 240, gap (with chevron) 40 → 5*240 + 4*40 = 1360. start x = (1600-1360)/2 = 120 -->
+
+  <!-- 01 Prompt -->
+  <g transform="translate(120, 110)">
+    <rect x="0" y="0" width="240" height="120" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="240" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">01 — INPUT</text>
+    <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="url(#chrome)" letter-spacing="-0.5">Prompt</text>
+    <text x="20" y="100" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">User message · system prompt</text>
+  </g>
+  <g transform="translate(366, 162)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- 02 Target -->
+  <g transform="translate(400, 110)">
+    <rect x="0" y="0" width="240" height="120" rx="12" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="0" y="0" width="240" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#cdcdc6" letter-spacing="3">02 — TARGET MODEL</text>
+    <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="url(#chrome)" letter-spacing="-0.5">Qwen3.6-27B</text>
+    <text x="20" y="100" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Single checkpoint · trunk + MTP heads</text>
+  </g>
+  <g transform="translate(646, 162)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- 03 MTP heads -->
+  <g transform="translate(680, 110)">
+    <rect x="0" y="0" width="240" height="120" rx="12" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="0" y="0" width="240" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#cdcdc6" letter-spacing="3">03 — DRAFT</text>
+    <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="url(#chrome)" letter-spacing="-0.5">Built-in MTP heads</text>
+    <text x="20" y="100" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Drafts K=3 tokens · no external drafter</text>
+  </g>
+  <g transform="translate(926, 162)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- 04 Accept + correct -->
+  <g transform="translate(960, 110)">
+    <rect x="0" y="0" width="240" height="120" rx="12" fill="url(#cardOwn)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="0" y="0" width="240" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#cdcdc6" letter-spacing="3">04 — ACCEPT</text>
+    <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="url(#chrome)" letter-spacing="-0.5">Probability ratio</text>
+    <text x="20" y="100" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Leviathan–Chen + residual correction</text>
+  </g>
+  <g transform="translate(1206, 162)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- 05 Verified tokens -->
+  <g transform="translate(1240, 110)">
+    <rect x="0" y="0" width="240" height="120" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="240" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">05 — OUTPUT</text>
+    <text x="20" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="url(#chrome)" letter-spacing="-0.5">Verified tokens</text>
+    <text x="20" y="100" font-family="Inter, sans-serif" font-size="12.5" fill="#9a9a92">Bit-exact at any temperature</text>
+  </g>
+
+  <!-- Down arrow from Verified to API row -->
+  <g transform="translate(1359, 232)">
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#5a5a55" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="98" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/>
+    <path d="M -5 94 L 0 101 L 5 94" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Loop badge: tiny pill at left of Target card -->
+  <g transform="translate(308, 162)">
+    <rect x="0" y="0" width="40" height="20" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <text x="20" y="14" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6">↻</text>
+  </g>
+  <text x="232" y="288" text-anchor="start" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">↻  EACH VERIFIED TOKEN LOOPS BACK INTO THE TARGET FOR THE NEXT CYCLE</text>
+
+  <!-- Row 2: API server + Chat clients to the right -->
+  <!-- Position: row at y=330..420. -->
+  <g transform="translate(900, 330)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">SERVING</text>
+    <text x="20" y="64" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="url(#chrome)" letter-spacing="-0.5">OpenAI · Anthropic API</text>
+    <text x="20" y="86" font-family="ui-monospace, monospace" font-size="11.5" fill="#9a9a92">/v1/chat · /v1/messages · stream SSE</text>
+  </g>
+  <g transform="translate(1188, 372)"><circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/><path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <g transform="translate(1220, 330)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="28" rx="12" fill="url(#cardBevel)"/>
+    <text x="20" y="36" font-family="ui-monospace, monospace" font-size="10" fill="#80807a" letter-spacing="3">CLIENTS</text>
+    <text x="20" y="64" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="url(#chrome)" letter-spacing="-0.5">Browser · Terminal · IDE</text>
+    <text x="20" y="86" font-family="Inter, sans-serif" font-size="12" fill="#9a9a92">Open WebUI · Claude Code · Cline</text>
+  </g>
+</svg>

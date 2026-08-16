@@ -1,0 +1,16 @@
+name: Model compatibility
+description: Ask about a model's MTP compatibility
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Model path, URL, or repo id
+    validations:
+      required: true
+  - type: textarea
+    id: inspect
+    attributes:
+      label: mtplx inspect output
+      description: Run `mtplx inspect model --model <model> --json`.
+    validations:
+      required: true

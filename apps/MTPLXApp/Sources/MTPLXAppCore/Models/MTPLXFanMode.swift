@@ -1,0 +1,39 @@
+import Foundation
+
+public enum MTPLXFanMode: String, CaseIterable, Codable, Equatable, Sendable {
+    case `default`
+    case smart
+    case max
+
+    public var title: String {
+        switch self {
+        case .default: return "Default"
+        case .smart: return "Smart"
+        case .max: return "Max"
+        }
+    }
+
+    public var help: String {
+        switch self {
+        case .default:
+            return "Apple's fan curve owns idle and generation."
+        case .smart:
+            return "Fans boost during generation, then return to auto."
+        case .max:
+            return "Fans pin to verified max until you change mode or stop."
+        }
+    }
+
+    public static func normalized(_ raw: String?) -> MTPLXFanMode {
+        switch (raw ?? "").trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
+        case "auto", "apple", "apple-default", "system", "off", "default":
+            return .default
+        case "max", "maximum", "performance", "sustained-max":
+            return .max
+        case "smart", "request", "request-scoped":
+            return .smart
+        default:
+            return .smart
+        }
+    }
+}

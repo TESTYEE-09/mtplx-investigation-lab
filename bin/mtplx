@@ -1,0 +1,119 @@
+#!/bin/bash
+# Wrapper used by the MTPLX V1 native app to launch the daemon with
+# the V1 backend (fair AR batching + SSD SessionBank) AND the V1 UI
+# branch's new server endpoints (fan_mode + thermal/status).
+#
+# Strategy: prefer this wrapper's own worktree and venv so source-tree QA
+# exercises the same runtime surface as the code under test. Do not fall
+# back to any developer-specific checkout; release builds should resolve the
+# installed Homebrew `mtplx` command instead.
+
+set -euo pipefail
+
+SOURCE="${BASH_SOURCE[0]}"
+while [[ -L "$SOURCE" ]]; do
+    SOURCE_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    TARGET="$(readlink "$SOURCE")"
+    if [[ "$TARGET" == /* ]]; then
+        SOURCE="$TARGET"
+    else
+        SOURCE="$SOURCE_DIR/$TARGET"
+    fi
+done
+
+SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+PKG_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+RUNTIME_ENV_FILE="${MTPLX_RUNTIME_ENV_FILE:-${HOME:-/tmp}/Library/Application Support/MTPLX/runtime.env}"
+if [[ -f "$RUNTIME_ENV_FILE" ]]; then
+    set -a
+    # shellcheck source=/dev/null
+    source "$RUNTIME_ENV_FILE"
+    set +a
+fi
+LOCAL_VENV_PY="$PKG_ROOT/.venv/bin/python"
+EXTERNAL_VENV_PY="${MTPLX_RUNTIME_VENV_PY:-${HOME:-/tmp}/Library/Caches/MTPLX/runtime-venv/bin/python}"
+RUNTIME_ROOT="$PKG_ROOT"
+STATIC_RUNTIME_ROOT="${MTPLX_RUNTIME_SOURCE_SHADOW:-${HOME:-/tmp}/Library/Caches/MTPLX/runtime-src/current}"
+VLLM_METAL_ROOT="${MTPLX_VLLM_METAL_REPO:-}"
+MLX_FORK_PYTHON_ROOT="${MTPLX_MLX_FORK_PYTHON_ROOT:-}"
+
+if [[ -x "$EXTERNAL_VENV_PY" ]]; then
+    VENV_PY="$EXTERNAL_VENV_PY"
+elif [[ -x "$LOCAL_VENV_PY" ]]; then
+    VENV_PY="$LOCAL_VENV_PY"
+else
+    echo "[mtplx-wrapper] no usable venv found" >&2
+    echo "[mtplx-wrapper] missing external venv at $EXTERNAL_VENV_PY" >&2
+    echo "[mtplx-wrapper] missing local venv at $LOCAL_VENV_PY" >&2
+    exit 1
+fi
+
+if [[ -d "$STATIC_RUNTIME_ROOT/mtplx" ]]; then
+    RUNTIME_ROOT="$STATIC_RUNTIME_ROOT"
+elif [[ "${MTPLX_RUNTIME_SOURCE_ALLOW_GIT:-0}" == "1" ]] \
+    && [[ -d "$PKG_ROOT/.git" ]] \
+    && command -v git >/dev/null 2>&1
+then
+    CACHE_BASE="${MTPLX_RUNTIME_SOURCE_CACHE:-${HOME:-/tmp}/Library/Caches/MTPLX/runtime-src}"
+    HEAD_ID="$(git -C "$PKG_ROOT" rev-parse --short HEAD 2>/dev/null || true)"
+    if [[ -n "$HEAD_ID" ]]; then
+        SHADOW_ROOT="$CACHE_BASE/$HEAD_ID"
+        STAMP="$SHADOW_ROOT/.mtplx-runtime-shadow"
+        if [[ ! -f "$STAMP" ]]; then
+            TMP_ROOT="$CACHE_BASE/.tmp-$HEAD_ID-$$"
+            mkdir -p "$TMP_ROOT"
+            if git -C "$PKG_ROOT" ls-tree -r --name-only HEAD mtplx | while IFS= read -r REL; do
+                case "$REL" in
+                    *.py) ;;
+                    *) continue ;;
+                esac
+                DST="$TMP_ROOT/$REL"
+                mkdir -p "$(dirname "$DST")"
+                git -C "$PKG_ROOT" cat-file -p "HEAD:$REL" > "$DST"
+            done; then
+                printf 'head=%s\ncreated=%s\nsource=git-python-blobs\n' "$HEAD_ID" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$TMP_ROOT/.mtplx-runtime-shadow"
+                if [[ ! -d "$SHADOW_ROOT" ]]; then
+                    mv "$TMP_ROOT" "$SHADOW_ROOT"
+                else
+                    SHADOW_ROOT="$CACHE_BASE/$HEAD_ID-$(date +%s)-$$"
+                    mv "$TMP_ROOT" "$SHADOW_ROOT"
+                fi
+            else
+                echo "[mtplx-wrapper] failed to materialize runtime source shadow; falling back to worktree" >&2
+            fi
+        fi
+        if [[ -d "$SHADOW_ROOT/mtplx" ]]; then
+            RUNTIME_ROOT="$SHADOW_ROOT"
+            while IFS= read -r -d '' SRC; do
+                if /bin/ls -lO "$SRC" 2>/dev/null | grep -q 'dataless'; then
+                    continue
+                fi
+                REL="${SRC#$PKG_ROOT/}"
+                DST="$SHADOW_ROOT/$REL"
+                mkdir -p "$(dirname "$DST")"
+                cp "$SRC" "$DST"
+            done < <(find "$PKG_ROOT/mtplx" -type f -name '*.py' -print0)
+        fi
+    fi
+fi
+
+PYCACHE_ROOT="${PYTHONPYCACHEPREFIX:-${HOME:-/tmp}/Library/Caches/MTPLX/pycache}"
+mkdir -p "$PYCACHE_ROOT"
+
+if [[ -z "$VLLM_METAL_ROOT" ]] && [[ -d "$PKG_ROOT/vllm_metal" ]]; then
+    VLLM_METAL_ROOT="$PKG_ROOT"
+fi
+
+PYTHONPATH_ROOTS="$RUNTIME_ROOT"
+if [[ -n "$MLX_FORK_PYTHON_ROOT" ]] && [[ -d "$MLX_FORK_PYTHON_ROOT/mlx" ]]; then
+    PYTHONPATH_ROOTS="$MLX_FORK_PYTHON_ROOT:$PYTHONPATH_ROOTS"
+fi
+if [[ -n "$VLLM_METAL_ROOT" ]]; then
+    PYTHONPATH_ROOTS="$PYTHONPATH_ROOTS:$VLLM_METAL_ROOT"
+    export MTPLX_VLLM_METAL_REPO="$VLLM_METAL_ROOT"
+fi
+
+exec env \
+    PYTHONPATH="$PYTHONPATH_ROOTS${PYTHONPATH:+:$PYTHONPATH}" \
+    PYTHONPYCACHEPREFIX="$PYCACHE_ROOT" \
+    "$VENV_PY" -m mtplx.cli "$@"

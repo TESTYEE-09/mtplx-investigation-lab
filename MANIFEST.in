@@ -1,0 +1,3 @@
+include CITATION.cff
+include CHANGELOG.md
+recursive-include scripts *.py *.sh

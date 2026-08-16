@@ -1,0 +1,5 @@
+--- runtime proof ---
+binary: /opt/homebrew/var/mtplx/venv-2.7.1/bin/mtplx
+mtplx package : /opt/homebrew/var/mtplx/venv-2.7.1/lib/python3.13/site-packages/mtplx/__init__.py
+version       : 2.7.1
+m1_q4_verify  : False

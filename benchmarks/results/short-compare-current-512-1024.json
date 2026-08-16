@@ -1,0 +1,141 @@
+{
+  "contexts": [
+    512,
+    1024
+  ],
+  "elapsed_wall_s": 12.96767208300298,
+  "env": {
+    "MTPLX_ASSERT_NO_LARGE_Q_SPLIT_FALLBACK": "1",
+    "MTPLX_BATCH_TARGET_ARRAYS": "1",
+    "MTPLX_CLEAR_CACHE_EVERY": "0",
+    "MTPLX_DROP_EVENTS": "1",
+    "MTPLX_DYNAMIC_PAGED_KV": "1",
+    "MTPLX_LAZY_MTP_HISTORY_APPEND": "1",
+    "MTPLX_LAZY_VERIFY_LOGITS": "1",
+    "MTPLX_MTP_HISTORY_LAST_WINDOW": "8192",
+    "MTPLX_MTP_HISTORY_LAST_WINDOW_THRESHOLD": "16384",
+    "MTPLX_MTP_HISTORY_POLICY": "auto",
+    "MTPLX_PREFILL_CHUNK_SIZE": "2048",
+    "MTPLX_SKIP_VERIFY_SNAPSHOT": "1",
+    "MTPLX_SUSTAINED_PREFILL": "1",
+    "MTPLX_SUSTAINED_PREFILL_LAYOUT": "contiguous_then_repage",
+    "MTPLX_TARGET_EMIT_FULL_PREFILL_LOGITS": "0",
+    "MTPLX_VLLM_METAL_PAGED_ATTN": "1",
+    "MTPLX_VLLM_METAL_PAGED_ATTN_IMPL": "mlx_vector_paged",
+    "MTPLX_VLLM_METAL_PAGED_BLOCK_SIZE": "16",
+    "MTPLX_VLLM_METAL_PAGED_PARTITIONED_ATTN": "1",
+    "MTPLX_VLLM_METAL_PAGED_PARTITION_SIZE": "512",
+    "MTPLX_VLLM_METAL_PAGED_PARTITION_THRESHOLD": "2048"
+  },
+  "git": {
+    "describe": "v0.1.6-1-g09b49d5-dirty",
+    "sha": "09b49d5"
+  },
+  "label": "current",
+  "max_tokens": 128,
+  "model": "/Users/youssof/Documents/MTPLX/models/Qwen3.6-27B-MTPLX-Optimized-Speed",
+  "platform": {
+    "machine": "arm64",
+    "python": "3.13.12",
+    "system": "macOS-26.3.1-arm64-arm-64bit-Mach-O"
+  },
+  "profile": {
+    "benchmark_ids": [],
+    "caveats": [
+      "User-selected; no automatic profile switching.",
+      "Targets long-context memory safety while preserving most Burst TPS.",
+      "Does not include v0.2 decode-state eval scheduling flags."
+    ],
+    "clock_anchor_allowed": false,
+    "draft_lm_head": {
+      "bits": 4,
+      "group_size": 64,
+      "mode": "affine"
+    },
+    "draft_sampler": null,
+    "env": {
+      "MTPLX_BATCH_TARGET_ARRAYS": "1",
+      "MTPLX_CLEAR_CACHE_EVERY": "0",
+      "MTPLX_DROP_EVENTS": "1",
+      "MTPLX_DYNAMIC_PAGED_KV": "1",
+      "MTPLX_LAZY_MTP_HISTORY_APPEND": "1",
+      "MTPLX_LAZY_VERIFY_LOGITS": "1",
+      "MTPLX_MTP_HISTORY_LAST_WINDOW": "8192",
+      "MTPLX_MTP_HISTORY_LAST_WINDOW_THRESHOLD": "16384",
+      "MTPLX_MTP_HISTORY_POLICY": "auto",
+      "MTPLX_PREFILL_CHUNK_SIZE": "2048",
+      "MTPLX_SKIP_VERIFY_SNAPSHOT": "1",
+      "MTPLX_SUSTAINED_PREFILL": "1",
+      "MTPLX_SUSTAINED_PREFILL_LAYOUT": "contiguous_then_repage",
+      "MTPLX_TARGET_EMIT_FULL_PREFILL_LOGITS": "0",
+      "MTPLX_VLLM_METAL_PAGED_ATTN": "1",
+      "MTPLX_VLLM_METAL_PAGED_ATTN_IMPL": "mlx_vector_paged",
+      "MTPLX_VLLM_METAL_PAGED_BLOCK_SIZE": "16",
+      "MTPLX_VLLM_METAL_PAGED_PARTITIONED_ATTN": "1",
+      "MTPLX_VLLM_METAL_PAGED_PARTITION_SIZE": "512",
+      "MTPLX_VLLM_METAL_PAGED_PARTITION_THRESHOLD": "2048"
+    },
+    "fan_control_allowed": false,
+    "model_id": "Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed",
+    "name": "sustained",
+    "product_claim_eligible": true,
+    "qa_only": false,
+    "required_mlx_fork_commit": "2377a99f",
+    "required_mlx_fork_fragment": "mlx-mtplx-0.31.2-qmm",
+    "runtime_profile": "native_mtp_sustained",
+    "sampler": {
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "summary": "Sustained Mode: explicit long-context native-MTP path with chunked contiguous prefill, final-token logits, and repaged decode KV."
+  },
+  "prompt_policy": "deterministic_token_ids_with_coherent_tail",
+  "rows": [
+    {
+      "accepted_drafts": 87,
+      "context_tokens": 512,
+      "decode_elapsed_s": 2.6757107069970516,
+      "decode_tok_s": 47.83775752187138,
+      "draft_time_s": 0.3317963360241265,
+      "drafted_tokens": 120,
+      "dynamic_paged_kv_budget_tokens": 0,
+      "elapsed_s": 3.309459625001182,
+      "generated_tokens": 128,
+      "large_q_split_sdpa_fallback_calls": 0,
+      "paged_kv_capacity_tokens": 16384,
+      "partitioned_paged_calls": 0,
+      "peak_memory_gb": 15.745657240971923,
+      "prefill_chunk_size": 2048,
+      "prefill_chunks": 1,
+      "prompt_eval_time_s": 0.6337489180041302,
+      "prompt_tps": 807.8909256562442,
+      "stats_tok_s": 38.67700909025421,
+      "verify_calls": 40,
+      "verify_time_s": 2.2095054979945417
+    },
+    {
+      "accepted_drafts": 83,
+      "context_tokens": 1024,
+      "decode_elapsed_s": 3.3350690420011233,
+      "decode_tok_s": 38.380015042566214,
+      "draft_time_s": 0.3932408320142713,
+      "drafted_tokens": 133,
+      "dynamic_paged_kv_budget_tokens": 0,
+      "elapsed_s": 5.0215711669989105,
+      "generated_tokens": 128,
+      "large_q_split_sdpa_fallback_calls": 0,
+      "paged_kv_capacity_tokens": 16384,
+      "partitioned_paged_calls": 0,
+      "peak_memory_gb": 16.176981022581458,
+      "prefill_chunk_size": 2048,
+      "prefill_chunks": 1,
+      "prompt_eval_time_s": 1.6865021249977872,
+      "prompt_tps": 607.1738569563579,
+      "stats_tok_s": 25.4900300609496,
+      "verify_calls": 45,
+      "verify_time_s": 2.7903140380003606
+    }
+  ],
+  "seed": 1234
+}

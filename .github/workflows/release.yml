@@ -1,0 +1,70 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Git ref to build, such as v0.3.5"
+        required: true
+        default: "v0.3.5"
+      publish_to_pypi:
+        description: "Publish the built artifacts to PyPI through Trusted Publishing"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build-artifacts:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+      - name: Validate PyPI publish ref
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_to_pypi }}
+        env:
+          PUBLISH_REF: ${{ inputs.ref }}
+        run: |
+          case "$PUBLISH_REF" in
+            v*) ;;
+            *)
+              echo "PyPI publishing requires an explicit version tag ref, not '$PUBLISH_REF'." >&2
+              exit 1
+              ;;
+          esac
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -U pip build twine
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - run: scripts/fresh_venv_smoke.sh
+      - uses: actions/upload-artifact@v7.0.1
+        with:
+          name: dist
+          path: dist/*
+
+  publish-pypi:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_to_pypi }}
+    needs: build-artifacts
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/mtplx
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8.0.1
+        with:
+          name: dist
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@v1.14.2
+        with:
+          packages-dir: dist/

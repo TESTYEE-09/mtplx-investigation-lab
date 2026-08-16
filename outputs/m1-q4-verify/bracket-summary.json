@@ -1,0 +1,296 @@
+{
+  "depths": {
+    "1": {
+      "acceptance_by_position": {
+        "both": [
+          0.84375
+        ],
+        "gdn": [
+          0.84375
+        ],
+        "mlp": [
+          0.84375
+        ],
+        "stock": [
+          0.84375
+        ]
+      },
+      "lane_signatures": {
+        "both": [
+          "('m1q4', True, True, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "gdn": [
+          "('m1q4', False, True, 2, (('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2)))"
+        ],
+        "mlp": [
+          "('m1q4', True, False, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "stock": [
+          "('m1q4', 'off')"
+        ]
+      },
+      "lane_stats": {
+        "both": [
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          },
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          }
+        ],
+        "gdn": [
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ],
+        "mlp": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          }
+        ],
+        "stock": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ]
+      },
+      "medians": {
+        "both": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 15.36813510447797,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934439876.0,
+          "tok_s": 9.068033467190418,
+          "verify_eval_ms_per_call": 24.083726772611648,
+          "verify_forward_ms_per_call": 174.46565662270808,
+          "verify_ms_per_call": 198.5396717581986
+        },
+        "gdn": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 15.572905333211759,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934423492.0,
+          "tok_s": 8.326431023097062,
+          "verify_eval_ms_per_call": 23.13837313748522,
+          "verify_forward_ms_per_call": 194.35887749965661,
+          "verify_ms_per_call": 217.49725063714186
+        },
+        "mlp": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 16.340335803265177,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934439829.0,
+          "tok_s": 8.679715080551867,
+          "verify_eval_ms_per_call": 25.072154741792474,
+          "verify_forward_ms_per_call": 181.27131630414323,
+          "verify_ms_per_call": 206.43539077520308
+        },
+        "stock": {
+          "active_memory_bytes": 20372752408.0,
+          "draft_ms_per_call": 15.359796696760565,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20934415253.0,
+          "tok_s": 8.275605640714168,
+          "verify_eval_ms_per_call": 23.266639529593345,
+          "verify_forward_ms_per_call": 195.99188760669978,
+          "verify_ms_per_call": 219.23700383239054
+        }
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    },
+    "2": {
+      "acceptance_by_position": {
+        "both": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "gdn": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "mlp": [
+          0.9545454545454546,
+          0.8571428571428571
+        ],
+        "stock": [
+          0.9545454545454546,
+          0.8571428571428571
+        ]
+      },
+      "lane_signatures": {
+        "both": [
+          "('m1q4', True, True, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "gdn": [
+          "('m1q4', False, True, 2, (('gdn', 2, 5120, (10240, 6144, 48, 48), 2), ('gdn', 3, 5120, (10240, 6144, 48, 48), 2)))"
+        ],
+        "mlp": [
+          "('m1q4', True, False, 2, (('dual', 2, 5120, 17408), ('dual', 3, 5120, 17408), ('mlp', 2, 5120, 17408), ('mlp', 3, 5120, 17408), ('single', 2, 5120, 17408), ('single', 2, 17408, 5120), ('single', 3, 5120, 17408), ('single', 3, 17408, 5120)))"
+        ],
+        "stock": [
+          "('m1q4', 'off')"
+        ]
+      },
+      "lane_stats": {
+        "both": [
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          },
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          }
+        ],
+        "gdn": [
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 144,
+            "gdn_stock": 336,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ],
+        "mlp": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 168,
+            "mlp_stock": 1906,
+            "qlinear_fused": 168
+          }
+        ],
+        "stock": [
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          },
+          {
+            "gdn_fused": 0,
+            "gdn_stock": 0,
+            "mlp_fused": 0,
+            "mlp_stock": 0,
+            "qlinear_fused": 0
+          }
+        ]
+      },
+      "medians": {
+        "both": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 28.478507154352922,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 9.04480001693873,
+          "verify_eval_ms_per_call": 33.20535591015157,
+          "verify_forward_ms_per_call": 246.4634111956516,
+          "verify_ms_per_call": 279.66876710580317
+        },
+        "gdn": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 28.721436478562005,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.26528639124371,
+          "verify_eval_ms_per_call": 31.877434802679446,
+          "verify_forward_ms_per_call": 276.1137825462198,
+          "verify_ms_per_call": 308.1654547175909
+        },
+        "mlp": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 28.5287844333494,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.951283417734306,
+          "verify_eval_ms_per_call": 33.51325004167966,
+          "verify_forward_ms_per_call": 249.20959869632497,
+          "verify_ms_per_call": 282.6588849990082
+        },
+        "stock": {
+          "active_memory_bytes": 20372752414.0,
+          "draft_ms_per_call": 28.864776197145186,
+          "n_samples": 6.0,
+          "peak_memory_bytes": 20977399474.0,
+          "tok_s": 8.2416142208567,
+          "verify_eval_ms_per_call": 32.01330152090953,
+          "verify_forward_ms_per_call": 277.19513039166645,
+          "verify_ms_per_call": 309.208431912576
+        }
+      },
+      "tokens_identical_to_stock": {
+        "both": true,
+        "gdn": true,
+        "mlp": true,
+        "stock": true
+      }
+    }
+  }
+}

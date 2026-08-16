@@ -1,0 +1,143 @@
+{
+  "device": {
+    "architecture": "applegpu_g13s",
+    "device_name": "Apple M1 Pro",
+    "max_buffer_length": 20100448256,
+    "max_recommended_working_set_size": 26800603136,
+    "memory_size": 34359738368,
+    "resource_limit": 499000
+  },
+  "metal_trace": "/Users/eamon/Documents/mtplx-investigation-lab/repo/outputs/m1-gdn/qwen38-d3.gputrace",
+  "mlx_backend": "linear_gdn_from_conv_tape",
+  "model": "models/qwen38-27b-optimized-speed",
+  "mtp_history_policy": "committed",
+  "prompt_tokens": 11,
+  "rows": [
+    {
+      "M": 2,
+      "attribution": {
+        "eval_calls": 0,
+        "eval_wall_median_s": 0.0,
+        "layers_median": [],
+        "sections_median_s": {}
+      },
+      "depth": 1,
+      "peak_memory_median_bytes": 0,
+      "unsplit_graph_build_median_s": 0.0,
+      "unsplit_mx_eval_median_s": 0.0,
+      "unsplit_mx_eval_samples_s": []
+    },
+    {
+      "M": 3,
+      "attribution": {
+        "eval_calls": 0,
+        "eval_wall_median_s": 0.0,
+        "layers_median": [],
+        "sections_median_s": {}
+      },
+      "depth": 2,
+      "incremental_vs_previous": {
+        "extra_rows": 1,
+        "sections_s": {},
+        "unsplit_mx_eval_s": 0.0
+      },
+      "peak_memory_median_bytes": 0,
+      "unsplit_graph_build_median_s": 0.0,
+      "unsplit_mx_eval_median_s": 0.0,
+      "unsplit_mx_eval_samples_s": []
+    },
+    {
+      "M": 4,
+      "attribution": {
+        "eval_calls": 0,
+        "eval_wall_median_s": 0.0,
+        "layers_median": [],
+        "sections_median_s": {}
+      },
+      "depth": 3,
+      "incremental_vs_previous": {
+        "extra_rows": 1,
+        "sections_s": {},
+        "unsplit_mx_eval_s": 0.0
+      },
+      "peak_memory_median_bytes": 0,
+      "unsplit_graph_build_median_s": 0.0,
+      "unsplit_mx_eval_median_s": 0.0,
+      "unsplit_mx_eval_samples_s": []
+    }
+  ],
+  "runtime_profile": "none",
+  "topology": {
+    "attention_layers": 16,
+    "gdn_layers": 48,
+    "layers": 64,
+    "pattern": [
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention",
+      "gdn",
+      "gdn",
+      "gdn",
+      "attention"
+    ]
+  },
+  "verify_core": "linear-gdn-from-conv-tape",
+  "verify_strategy": "capture_commit"
+}

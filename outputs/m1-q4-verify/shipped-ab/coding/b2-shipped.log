@@ -1,0 +1,5 @@
+[mtplx] compiled-verify prewarm {"buckets": [], "skipped": ["no_paged_entries"], "elapsed_s": 0.0}
+lanes: {'architecture': 'applegpu_g13s', 'supported': True, 'mlp': True, 'gdn_proj': True, 'gdn_nsg': 2}
+lane stats: {'mlp_fused': 224, 'mlp_stock': 2110, 'qlinear_fused': 224, 'gdn_fused': 192, 'gdn_stock': 144}
+depth=1 tok_s=8.924 verify=192.7ms forward=165.5ms
+depth=2 tok_s=7.315 verify=307.8ms forward=265.9ms

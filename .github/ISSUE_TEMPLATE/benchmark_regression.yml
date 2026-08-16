@@ -1,0 +1,21 @@
+name: Benchmark regression
+description: Report a speed or quality regression
+body:
+  - type: textarea
+    id: envelope
+    attributes:
+      label: Benchmark JSON envelope
+    validations:
+      required: true
+  - type: input
+    id: fan
+    attributes:
+      label: Fan mode and whether --max was used
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile
+    validations:
+      required: true

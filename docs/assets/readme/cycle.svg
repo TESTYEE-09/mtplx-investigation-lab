@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Speculative cycle: Draft, Verify, Accept, Repair, Commit">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0e14"/>
+      <stop offset="100%" stop-color="#06060a"/>
+    </linearGradient>
+    <linearGradient id="cardFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+    </linearGradient>
+    <linearGradient id="cardBevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.20)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cdcdc6"/>
+      <stop offset="100%" stop-color="#7e7e76"/>
+    </linearGradient>
+    <radialGradient id="chip" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#f8f8f2"/>
+      <stop offset="60%" stop-color="#9e9e96"/>
+      <stop offset="100%" stop-color="#3a3a36"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="360" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1600" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <!-- title -->
+  <text x="60" y="56" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#80807a" letter-spacing="6">SPECULATIVE CYCLE  ·  ONE FORWARD, K VERIFIED TOKENS</text>
+
+  <!-- 5 cards -->
+  <g transform="translate(40, 90)">
+    <rect x="0" y="0" width="280" height="220" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="36" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="40" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">01 — DRAFT</text>
+    <text x="22" y="86" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">MTP head proposes</text>
+    <text x="22" y="124" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">K tokens drafted from</text>
+    <text x="22" y="144" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">the model's own built-in</text>
+    <text x="22" y="164" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">MTP heads, with proposal</text>
+    <text x="22" y="184" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">probabilities <tspan font-family="ui-monospace, monospace" fill="#cdcdc6">q</tspan>.</text>
+  </g>
+  <g transform="translate(322, 190)">
+    <circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/>
+    <path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(346, 90)">
+    <rect x="0" y="0" width="280" height="220" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="36" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="40" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">02 — VERIFY</text>
+    <text x="22" y="86" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">Batched forward</text>
+    <text x="22" y="124" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">Target evaluates all K</text>
+    <text x="22" y="144" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">positions in one forward</text>
+    <text x="22" y="164" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">via GraphBank-compiled</text>
+    <text x="22" y="184" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">verify shapes.</text>
+  </g>
+  <g transform="translate(628, 190)">
+    <circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/>
+    <path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(652, 90)">
+    <rect x="0" y="0" width="280" height="220" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="36" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="40" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">03 — ACCEPT</text>
+    <text x="22" y="86" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">Probability ratio</text>
+    <text x="22" y="124" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">Per-position acceptance</text>
+    <text x="22" y="144" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">via Leviathan–Chen</text>
+    <text x="22" y="164" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">rejection sampling. fp32</text>
+    <text x="22" y="184" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">ratio path (BF16 underflows).</text>
+  </g>
+  <g transform="translate(934, 190)">
+    <circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/>
+    <path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(958, 90)">
+    <rect x="0" y="0" width="280" height="220" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="36" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="40" font-family="ui-monospace, monospace" font-size="11" fill="#80807a" letter-spacing="4">04 — REPAIR</text>
+    <text x="22" y="86" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">Residual correction</text>
+    <text x="22" y="124" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">On rejection, sample a</text>
+    <text x="22" y="144" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">clean replacement from</text>
+    <text x="22" y="164" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098"><tspan font-family="ui-monospace, monospace" fill="#cdcdc6">(p − q)+</tspan>. No drift.</text>
+  </g>
+  <g transform="translate(1240, 190)">
+    <circle cx="9" cy="9" r="11" fill="url(#chip)" stroke="#0a0a0c" stroke-width="3"/>
+    <path d="M 5 4 L 12 9 L 5 14" fill="none" stroke="#0a0a0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(1264, 90)">
+    <rect x="0" y="0" width="280" height="220" rx="14" fill="url(#cardFace)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="0" y="0" width="280" height="36" rx="14" fill="url(#cardBevel)"/>
+    <text x="22" y="40" font-family="ui-monospace, monospace" font-size="11" fill="#cdcdc6" letter-spacing="4">05 — COMMIT</text>
+    <text x="22" y="86" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="url(#chrome)" letter-spacing="-0.5">+ bonus token</text>
+    <text x="22" y="124" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">Committed-history KV</text>
+    <text x="22" y="144" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">writeback. Bonus token at</text>
+    <text x="22" y="164" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">K+1 falls out free when</text>
+    <text x="22" y="184" font-family="Inter, sans-serif" font-size="13.5" fill="#a0a098">every position accepted.</text>
+  </g>
+
+  <!-- footer caption -->
+  <text x="800" y="338" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#56564f" letter-spacing="4">COMMIT LOOPS BACK TO DRAFT EVERY CYCLE</text>
+</svg>
