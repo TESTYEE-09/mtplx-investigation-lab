@@ -12,6 +12,38 @@
 
 </div>
 
+> ### This fork: exact q4 verify lanes for Apple M1 Pro
+>
+> A research fork of [MTPLX](https://github.com/youssofal/MTPLX) (Apache-2.0),
+> not an official release. It adds two shape-specialized Metal kernels that fuse
+> quantized projections during speculative verification at `M = 2` and `M = 3`
+> (depths D1/D2), where MLX otherwise issues one `qmv_fast` launch per
+> projection:
+>
+> * **`mlp` lane** — `gate_proj`+`up_proj` in one launch and one read of `x`,
+>   plus an exact `down_proj`, across 56 q4 decoder MLPs
+> * **`gdn_proj` lane** — `in_proj_qkv`+`z`+`b`+`a` in one launch instead of
+>   four, across all 48 GDN layers
+>
+> Together they remove ~200 Metal dispatches per verify forward. Both preserve
+> `qmv_fast`'s per-column dot product and SIMD reduction order byte for byte, so
+> **output is bit-identical to stock MLX** — 30/30 exactness checks pass against
+> the model's own weights. A split-K variant was faster but changed the
+> reduction order, and was rejected on those grounds.
+>
+> Best validated measurement (cross-process, repeats, medians, on a bf16
+> sibling): **+11.9% D1 / +11.6% D2** decode tok/s, RAM unchanged, tokens
+> identical to stock. On the installed FP16 model the lanes are proven correct
+> and proven to engage, but its matched stock-vs-optimized number **has not been
+> measured yet** — don't quote a speedup for it.
+>
+> Enabled automatically on `applegpu_g13s` only; every other GPU keeps stock
+> MLX. Opt out with `MTPLX_DISABLE_M1_Q4_VERIFY=1`.
+>
+> **Start here:** [`docs/perf/M1_Q4_FINAL_HANDOFF.md`](docs/perf/M1_Q4_FINAL_HANDOFF.md)
+> — design, safety model, benchmarks, rollback, and the two invalid-methodology
+> warnings worth reading before running your own A/B.
+
 MTPLX is a native Mac app and a command line for running local language models with multi-token prediction. Modern models like Qwen 3.5/3.6/3.8 ship with built-in MTP heads. Almost no runtime uses them. MTPLX does: the model drafts several tokens ahead of itself, verifies them in one batched forward pass, and keeps only what passes exact rejection sampling. Same model, same output distribution, measured 1.6x faster on a 16 GB M4 Mac mini and 2.24x on an M5 Max.
 
 There is no second draft model eating your RAM, and no greedy shortcut that quietly changes what the model would have said at real sampling settings. The acceptance math is the Leviathan and Chen rejection sampling theorem with residual correction, so `temperature=0.6, top_p=0.95` behaves exactly like normal decoding, just faster.
